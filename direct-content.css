@@ -1,0 +1,1 @@
+.topic-open{display:block;margin:18px 0 0 auto;border:1px solid var(--red);background:transparent;color:var(--red);padding:9px 15px;font:13px inherit;cursor:pointer}.topic:hover .topic-open{background:var(--red);color:#fff}.content-direct{max-width:900px}.content-direct .video-script{margin-top:24px}.content-direct .related-wrap{margin-top:34px}
