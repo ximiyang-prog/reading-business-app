@@ -1,0 +1,4 @@
+.case-auto-note{margin:0 0 20px;padding:12px 14px;border-left:3px solid var(--green);background:#f4efe7;color:#75695f;font-size:12px;line-height:1.6}
+.case-usage-note{display:grid;gap:7px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.case-usage-note b{color:var(--red);font-size:11px;letter-spacing:.08em}
+.case-usage-note span{display:block;padding:8px 10px;background:#e7ded1;color:var(--green);font-size:11px;line-height:1.5}
