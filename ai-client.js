@@ -1,6 +1,7 @@
 const API_BASE=(window.TRUE_READ_API_BASE||localStorage.getItem('trueReadApiBase')||'https://reading-business-api.susu19850505.workers.dev').replace(/\/$/,'');
 async function apiPost(path,body){if(!API_BASE)throw new Error('AI 服务地址尚未配置');const r=await fetch(`${API_BASE}${path}`,{method:'POST',body:JSON.stringify(body)});const data=await r.json().catch(()=>({}));if(!r.ok||!data.ok)throw new Error(data.message||`服务请求失败（${r.status}）`);return data.data}
-const generateFromSource=(bookName,audience,sourceText,sourceType,platform)=>apiPost('/api/generate',{bookName,audience,sourceText,sourceType,platform});
+const generateFromSource=(bookName,audience,sourceText,sourceType,platform,sourceAnalysis)=>apiPost('/api/generate',{bookName,audience,sourceText,sourceType,platform,sourceAnalysis});
+const analyzeBookSource=(bookName,sourceText,documentName)=>apiPost('/api/analyze-source',{bookName,sourceText,documentName});
 const rewriteContent=payload=>apiPost('/api/rewrite',payload);
 const extractBookQuotes=(bookName,audience,sourceText,documentName)=>apiPost('/api/quotes',{bookName,audience,sourceText,documentName});
 function markParagraphs(text){return String(text||'').split(/\n\s*\n|\r?\n/).map(x=>x.trim()).filter(Boolean).map((x,i)=>`【第${i+1}段】${x}`).join('\n')}
