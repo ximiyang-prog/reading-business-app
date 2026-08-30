@@ -1,4 +1,4 @@
-const API_BASE=(window.TRUE_READ_API_BASE||localStorage.getItem('trueReadApiBase')||'https://reading-business-api.susu19850505.workers.dev').replace(/\/$/,'');
+const API_BASE=(window.TRUE_READ_API_BASE||'https://read-api.ximiyang.com').replace(/\/$/,'');
 async function apiPost(path,body){if(!API_BASE)throw new Error('AI 服务地址尚未配置');const r=await fetch(`${API_BASE}${path}`,{method:'POST',body:JSON.stringify(body)});const data=await r.json().catch(()=>({}));if(!r.ok||!data.ok)throw new Error(data.message||`服务请求失败（${r.status}）`);return data.data}
 const generateFromSource=(bookName,audience,sourceText,sourceType,platform,sourceAnalysis)=>apiPost('/api/generate',{bookName,audience,sourceText,sourceType,platform,sourceAnalysis});
 const analyzeBookSource=(bookName,sourceText,documentName)=>apiPost('/api/analyze-source',{bookName,sourceText,documentName});
