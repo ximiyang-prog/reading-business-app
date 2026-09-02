@@ -1,0 +1,11 @@
+.share-dialog:has(.wechat-share-preview:not(.hidden)) {
+  width: min(920px, calc(100% - 30px));
+  max-width: 920px;
+}
+.wechat-share-preview { display:grid; grid-template-columns:1.35fr 1fr; gap:20px; align-items:start; margin-top:20px; }
+.wechat-share-preview figure { margin:0; padding:16px; background:#eef0e6; }
+.wechat-share-preview figcaption { color:var(--green); font-size:13px; font-weight:700; }
+.wechat-share-preview canvas { width:100%; margin:12px auto; }
+.wechat-share-preview button { border:0; padding:10px 15px; background:var(--green); color:#fff; cursor:pointer; }
+.share-preview.hidden { display:none; }
+@media (max-width:680px) { .wechat-share-preview { grid-template-columns:1fr; } }
